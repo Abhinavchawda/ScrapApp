@@ -7,9 +7,9 @@ let conn = await mongoose.connect("mongodb://localhost:27017/scrap");
 const app = express();
 const port = 3000;
 
-//to get the data of users from the DB
+//to get the data of user from the DB
 app.get('/', async (req, res) => {
-    let us = await user.find({});
+    let us = await user.findOne({ u_id: "" });
     res.jsonp(us);
 })
 
